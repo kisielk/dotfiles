@@ -1,0 +1,10 @@
+[ui]
+username=Kamil Kisiel <kamil@kamilkisiel.net>
+
+[extensions]
+color=
+pager=
+mq=
+
+[pager]
+pager = LESS='FRX' less

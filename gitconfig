@@ -1,0 +1,6 @@
+[user]
+	email = kamil@kamilkisiel.net
+[push]
+	default = simple
+[color]
+	ui = true
