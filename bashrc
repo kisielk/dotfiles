@@ -13,5 +13,6 @@ if [ $uname == "Linux" ]; then
     eval `dircolors $HOME/.dir_colors`
     alias ls="ls --color=auto";
 elif [ $uname == "Darwin" ]; then
-    alias ls="ls -G";
+    export CLICOLOR=1
+    export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
