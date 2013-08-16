@@ -5,3 +5,6 @@
 	default = simple
 [color]
 	ui = true
+[alias]
+	in = "!git remote update -p; git log ..@{u}"
+	out = log @{u}..
