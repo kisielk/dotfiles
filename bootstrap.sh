@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 shopt -s extglob
 dotfiles=$(pwd)
 for f in !(*.sh); do

@@ -9,10 +9,13 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # ls alias
-if [ $uname == "Linux" ]; then
+case "$uname" in
+"linux")
     eval `dircolors $HOME/.dir_colors`
     alias ls="ls --color=auto";
-elif [ $uname == "Darwin" ]; then
+    ;;
+"Darwin"|"FreeBSD")
     export CLICOLOR=1
     export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-fi
+    ;;
+esac
