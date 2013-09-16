@@ -3,12 +3,14 @@ uname=$(uname)
 # If not running interactively, don't do any more
 [ -z "$PS1" ] && return
 
-# Completion
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
+# Completion on Linux / Mac OS X
+[ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# ls alias
+# Completion on FreeBSD
+[ -f /usr/local/share/bash-completion/bash_completion.sh ] && \
+        source /usr/local/share/bash-completion/bash_completion.sh
+
+# ls colors
 case "$uname" in
 "linux")
     eval `dircolors $HOME/.dir_colors`
