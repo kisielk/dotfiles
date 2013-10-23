@@ -1,10 +1,15 @@
-uname=$(uname)
-
 # If not running interactively, don't do any more
 [ -z "$PS1" ] && return
 
-# Completion on Linux / Mac OS X
+uname=$(uname)
+
+# Completion on Linux / older Mac OS X
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# Completion on new OS X
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 # Completion on FreeBSD
 [ -f /usr/local/share/bash-completion/bash_completion.sh ] && \
@@ -21,3 +26,5 @@ case "$uname" in
     export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
     ;;
 esac
+
+export PS1='\u $? \j \w \$ '
