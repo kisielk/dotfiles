@@ -21,3 +21,11 @@ fi
 if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+
+if [ -d  "/Applications/VMware Fusion.app" ]; then
+    export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+fi
