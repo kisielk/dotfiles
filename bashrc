@@ -27,6 +27,6 @@ case "$uname" in
     ;;
 esac
 
-export PS1='\u x:$? j:\j [$(date "+%Y-%M-%d %H:%m:%S")] \w \$ '
+export PS1='\u x:$? j:\j [$(date "+%Y-%m-%d %H:%M:%S")] \w \$ '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
