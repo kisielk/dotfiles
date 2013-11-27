@@ -1,6 +1,5 @@
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
-
 export GOROOT=$HOME/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME
@@ -28,4 +27,8 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 if [ -d  "/Applications/VMware Fusion.app" ]; then
     export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
 fi
