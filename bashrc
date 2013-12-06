@@ -27,6 +27,10 @@ case "$uname" in
     ;;
 esac
 
-export PS1='\u x:$? j:\j [$(date "+%Y-%m-%d %H:%M:%S")] \w \$ '
+source $HOME/.git-prompt
+export GIT_PS1_SHOWDIRTYSTATE="yes"
+export GIT_PS1_SHOWSTASHSTATE="yes"
+export GIT_PS1_SHOWUPSTREAM="auto"
+export PS1='\w$(__git_ps1 " (%s)") \$ '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
