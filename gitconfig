@@ -10,3 +10,5 @@
 	out = log @{u}..
 [core]
 	excludesfile = /Users/kamil/.gitignore_global
+[branch]
+	autosetuprebase = always

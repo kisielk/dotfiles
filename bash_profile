@@ -1,9 +1,12 @@
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
-export GOROOT=$HOME/go
-export PATH=$GOROOT/bin:$PATH
-export GOPATH=$HOME
-export PATH=$GOPATH/bin:$PATH
+
+if [ -d $HOME/go ]; then
+    export GOROOT=$HOME/go
+    export PATH=$GOROOT/bin:$PATH
+    export GOPATH=$HOME
+    export PATH=$GOPATH/bin:$PATH
+fi
 
 export CDPATH=$GOPATH/src/github.com/kisielk:$GOPATH/src
 if [ -d $HOME/kiip ]; then
