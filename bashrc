@@ -1,7 +1,7 @@
 # If not running interactively, don't do any more
 [ -z "$PS1" ] && return
 
-uname=$(uname)
+uname=$(uname | tr '[:upper:]' '[:lower:]')
 
 # Completion on Linux / older Mac OS X
 [ -f /etc/bash_completion ] && source /etc/bash_completion
@@ -21,7 +21,7 @@ case "$uname" in
     eval `dircolors $HOME/.dir_colors`
     alias ls="ls --color=auto";
     ;;
-"Darwin"|"FreeBSD")
+"darwin"|"freebsd")
     export CLICOLOR=1
     export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
     ;;
