@@ -8,11 +8,12 @@ if [ -d $HOME/go ]; then
     export PATH=$GOPATH/bin:$PATH
 fi
 
-export CDPATH=$GOPATH/src/github.com/kisielk:$GOPATH/src
-if [ -d $HOME/kiip ]; then
-    export CDPATH=$HOME/kiip:$CDPATH
+nitro=$HOME/tr/nitro
+if [ -d $nitro ]; then
+    export GOPATH=$GOPATH:$nitro/lib:$nitro
 fi
-export CDPATH=.:$CDPATH
+
+export CDPATH=.:$GOPATH/src/github.com/kisielk:$GOPATH/src
 
 PLAN9=$HOME/plan9port
 if [ -d $PLAN9 ]; then
