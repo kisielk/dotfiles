@@ -7,7 +7,7 @@ uname=$(uname)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 # Completion on new OS X
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [ -f /usr/local/bin/brew ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 

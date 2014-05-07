@@ -32,7 +32,3 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 if [ -d  "/Applications/VMware Fusion.app" ]; then
     export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 fi
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
