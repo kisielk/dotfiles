@@ -10,7 +10,7 @@ fi
 
 nitro=$HOME/tr/nitro
 if [ -d $nitro ]; then
-    export GOPATH=$GOPATH:$nitro/lib:$nitro
+    export GOPATH=$GOPATH:$nitro/open-nitro:$nitro/lib:$nitro
 fi
 
 export CDPATH=.:$GOPATH/src/github.com/kisielk:$GOPATH/src
