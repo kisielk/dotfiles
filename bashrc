@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # If not running interactively, don't do any more
 [ -z "$PS1" ] && return
 
@@ -7,8 +9,9 @@ uname=$(uname | tr '[:upper:]' '[:lower:]')
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 # Completion on new OS X
-if [ -x /usr/local/bin/brew ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+brew_prefix="$(brew --prefix)"
+if [ -x /usr/local/bin/brew ] && [ -f "$brew_prefix"/etc/bash_completion ]; then
+    . "$brew_prefix"/etc/bash_completion
 fi
 
 # Completion on FreeBSD
@@ -18,7 +21,7 @@ fi
 # ls colors
 case "$uname" in
 "linux")
-    eval `dircolors $HOME/.dir_colors`
+    eval "$(dircolors "$HOME"/.dir_colors)"
     alias ls="ls --color=auto";
     ;;
 "darwin"|"freebsd")
@@ -27,10 +30,11 @@ case "$uname" in
     ;;
 esac
 
-source $HOME/.git-prompt
+source "$HOME"/.git-prompt
 export GIT_PS1_SHOWDIRTYSTATE="yes"
 export GIT_PS1_SHOWSTASHSTATE="yes"
 export GIT_PS1_SHOWUPSTREAM="auto"
 export PS1='\h:\w$(__git_ps1 " (%s)") \$ '
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias lsusb='system_profiler SPUSBDataType'
+alias cubemx='java -jar /Applications/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX.exe'
