@@ -1,6 +1,7 @@
 [user]
 	name = Kamil Kisiel
 	email = kamil@kamilkisiel.net
+	signingkey = D1ADE7CE
 [push]
 	default = simple
 [color]
@@ -24,3 +25,8 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
+[url "git@github.com:"]
+	    ;; e.g git remote add gh:samdoshi/my_repo
+		;;;    git clone gh:samdoshi/my_repo
+		insteadOf = gh:

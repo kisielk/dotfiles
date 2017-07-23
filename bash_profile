@@ -7,7 +7,9 @@ export LIBRARY_PATH=/usr/local/lib
 export GOPATH=$HOME
 export PATH
 PATH=$GOPATH/bin:$PATH
-PATH=$(go env GOROOT)/bin:$PATH
+if [ "$(which go)" ]; then
+    PATH=$(go env GOROOT)/bin:$PATH
+fi
 export CDPATH=.:$GOPATH/src/github.com/kisielk:$GOPATH/src:$HOME/intellijel
 
 PLAN9=$HOME/plan9port
