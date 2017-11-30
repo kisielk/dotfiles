@@ -1,6 +1,7 @@
 [user]
 	name = Kamil Kisiel
 	email = kamil@kamilkisiel.net
+	signingkey = D1ADE7CE
 [push]
 	default = simple
 [color]
@@ -35,3 +36,8 @@
 	cookiefile = /Users/kamil/.gitcookies
 [commit]
 	template = /Users/kamil/.stCommitMsg
+
+[url "git@github.com:"]
+	    ;; e.g git remote add gh:samdoshi/my_repo
+		;;;    git clone gh:samdoshi/my_repo
+		insteadOf = gh:
