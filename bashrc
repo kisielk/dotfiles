@@ -38,3 +38,6 @@ export PS1='\h:\w$(__git_ps1 " (%s)") \$ '
 
 alias lsusb='system_profiler SPUSBDataType'
 alias cubemx='java -jar /Applications/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX.exe'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

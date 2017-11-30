@@ -18,6 +18,11 @@ if [ -d "$PLAN9" ]; then
     export PATH=$PATH:$PLAN9/bin
 fi
 
+DOT_LOCAL_BIN=$HOME/.local/bin
+if [ -d "$DOT_LOCAL_BIN" ]; then
+    export PATH=$PATH:$DOT_LOCAL_BIN
+fi
+
 ARM_TOOLS=/Users/kamil/gcc-arm-none-eabi-4_9-2014q4/bin
 if [ -d $ARM_TOOLS ]; then
     export PATH=$ARM_TOOLS:$PATH
