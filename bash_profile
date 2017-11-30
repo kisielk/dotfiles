@@ -32,8 +32,18 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+[[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
+
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 if [ -d  "/Applications/VMware Fusion.app" ]; then
     export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 fi
+
+MACVIM_BIN=/Applications/MacVim.app/Contents/bin
+if [ -d "$MACVIM_BIN" ]; then
+    export PATH=${MACVIM_BIN}:$PATH
+fi
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/Users/kamil/anaconda/bin:$PATH"

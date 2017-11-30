@@ -38,3 +38,10 @@ export PS1='\h:\w$(__git_ps1 " (%s)") \$ '
 
 alias lsusb='system_profiler SPUSBDataType'
 alias cubemx='java -jar /Applications/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX.exe'
+
+restart_spotlight() {
+    sudo mdutil -a -i off
+    sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+    sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+    sudo mdutil -a -i on
+}
