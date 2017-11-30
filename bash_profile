@@ -48,6 +48,11 @@ if [ -d "$MACVIM_BIN" ]; then
     export PATH=${MACVIM_BIN}:$PATH
 fi
 
+VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+if [ -d "$VSCODE_BIN" ]; then
+    export PATH="$PATH:${VSCODE_BIN}"
+fi
+
 if [ -d "$HOME/anaconda" ]; then
     export PATH="$HOME/anaconda/bin:$PATH"
 fi
