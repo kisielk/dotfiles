@@ -64,3 +64,7 @@ fi
 
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
+CARGO_BIN="$HOME/.cargo/bin"
+if [ -d "$CARGO_BIN" ]; then
+    export PATH="$CARGO_BIN:$PATH"
+fi
