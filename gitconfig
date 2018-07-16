@@ -41,3 +41,5 @@
 	    ;; e.g git remote add gh:samdoshi/my_repo
 		;;;    git clone gh:samdoshi/my_repo
 		insteadOf = gh:
+[rebase]
+	autoStash = true
