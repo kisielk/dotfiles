@@ -37,9 +37,7 @@ if [ -f "$HOME/.bashrc" ]; then
     source "${HOME}"/.bashrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+[[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 
 if [ -d  "/Applications/VMware Fusion.app" ]; then
     export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
@@ -55,3 +53,25 @@ CARGO_PATH=$HOME/.cargo/bin
 if [ -d "$CARGO_PATH" ]; then
     export PATH="$CARGO_PATH:$PATH"
 fi
+
+MACVIM_BIN=/Applications/MacVim.app/Contents/bin
+if [ -d "$MACVIM_BIN" ]; then
+    export PATH=${MACVIM_BIN}:$PATH
+fi
+
+VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+if [ -d "$VSCODE_BIN" ]; then
+    export PATH="$PATH:${VSCODE_BIN}"
+fi
+
+if [ -d "$HOME/anaconda" ]; then
+    export PATH="$HOME/anaconda/bin:$PATH"
+fi
+
+if [ -d "$HOME/.rvm" ]; then
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
+
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+

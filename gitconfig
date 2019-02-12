@@ -14,6 +14,13 @@
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     pushr = push --recurse-submodules=on-demand
+
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
 [core]
 	excludesfile = /Users/kamil/.gitignore_global
 	autocrlf = input
@@ -25,8 +32,14 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[http]
+	cookiefile = /Users/kamil/.gitcookies
+[commit]
+	template = /Users/kamil/.stCommitMsg
 
 [url "git@github.com:"]
 	    ;; e.g git remote add gh:samdoshi/my_repo
 		;;;    git clone gh:samdoshi/my_repo
 		insteadOf = gh:
+[rebase]
+	autoStash = true

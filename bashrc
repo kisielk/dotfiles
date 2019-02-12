@@ -39,5 +39,9 @@ export PS1='\h:\w$(__git_ps1 " (%s)") \$ '
 alias lsusb='system_profiler SPUSBDataType'
 alias cubemx='java -jar /Applications/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX.exe'
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+restart_spotlight() {
+    sudo mdutil -a -i off
+    sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+    sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+    sudo mdutil -a -i on
+}
