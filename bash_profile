@@ -44,3 +44,14 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 if [ -d  "/Applications/VMware Fusion.app" ]; then
     export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kamil/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/kamil/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kamil/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/kamil/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+CARGO_PATH=$HOME/.cargo/bin
+if [ -d "$CARGO_PATH" ]; then
+    export PATH="$CARGO_PATH:$PATH"
+fi
